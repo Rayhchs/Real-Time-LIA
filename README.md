@@ -1,5 +1,5 @@
 # Real Time LIA
-This repository conducted real time image reenactment using ["Latent Image Animator: Learning to Animate Images via Latent Space Navigation"](https://github.com/wyhsirius/LIA). By combining face detection and face reenactment, the project can accept any type of face image as input. Combining with face detection and face reenactment, any kind of face image can be inputed. However, image size should be larger than 256x256. This project allows you to control a real person's face based on your expression. 
+This repository conducted real time image reenactment using ["Latent Image Animator: Learning to Animate Images via Latent Space Navigation"](https://github.com/wyhsirius/LIA). By combining face detection and face reenactment, the project can accept any type of face image as input. It allows you to control a real person's face based on your expression. However, image size should be larger than 256x256. 
 
 ## Getting Started
 * Clone this repository
