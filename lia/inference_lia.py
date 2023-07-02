@@ -21,7 +21,7 @@ class Inference_LIA(nn.Module):
         self.img_source = self.load_image(args.source_path)
         if det_model is not None:
             roi = det_model.inference(self.img_source)
-            self.crop_image(self.img_source, roi)
+            self.img_source = self.crop_image(self.img_source, roi)
         self.img_source = self.img_preprocessing(self.img_source, args.size).cuda()
 
     def crop_image(self, image, roi):
@@ -30,6 +30,7 @@ class Inference_LIA(nn.Module):
         min_len = min([roi[0], roi[1], n - roi[2], m - roi[3]])
         length = int(min_len) if min_len < length else int(length)
         xc, yc = int(roi[0]+(roi[2] - roi[0])/2), int(roi[1]+(roi[3] - roi[1])/2)
+        print(image[yc-length*2:yc+length*2, xc-length*2:xc+length*2,:].shape)
         return image[yc-length*2:yc+length*2, xc-length*2:xc+length*2, :]
 
     def load_image(self, filename):

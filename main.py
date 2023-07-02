@@ -59,9 +59,6 @@ def main(args):
             out.write(recon_img)
 
         if recon_img is not None:
-            # test = lia.crop_image(frame, roi)
-            # print(test.shape)
-            # cv2.imshow("live", test)
             cv2.imshow("live", recon_img)
         else:
             cv2.imshow("live", frame)
@@ -78,7 +75,7 @@ if __name__ == '__main__':
     parser.add_argument("--det_model_path", type=str, default='./detection/Det.tflite')
     parser.add_argument("--latent_dim_style", type=int, default=512)
     parser.add_argument("--latent_dim_motion", type=int, default=20)
-    parser.add_argument("--source_path", type=str, default='macron.png')
+    parser.add_argument("--source_path", type=str, default='xi.jpg')
 
     args = parser.parse_args()
     main(args)
